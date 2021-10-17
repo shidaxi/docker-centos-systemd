@@ -7,7 +7,7 @@ on:
 
 jobs:
   docker-build:
-    uses: shidaxi/.github/build-docker-image.yaml@master
+    uses: shidaxi/action-workflow-templates/.github/workflows/build-docker-image.yaml@master
     with: 
       imageName: shidaxi/centos-systemd
     secrets:
