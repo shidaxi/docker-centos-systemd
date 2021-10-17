@@ -1,0 +1,15 @@
+name: Docker Image CI
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  docker-build:
+    uses: shidaxi/.github/build-docker-image.yaml@master
+    with: 
+      imageName: shidaxi/centos-systemd
+    secrets:
+      dockerhubUsername: ${{ secrets.DOCKERHUB_USERNAME }}
+      dockerhubToken: ${{ secrets.DOCKERHUB_TOKEN }}
